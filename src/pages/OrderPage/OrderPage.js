@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import OrderContext from "../../contexts/OrderContext";
 import Type from "./Type";
 
 const OrderPage = () => {
+    const [orderDatas] = useContext(OrderContext);
 
     return (
         <div>
@@ -14,7 +17,7 @@ const OrderPage = () => {
                 </div>
             </div>
             <div>
-                <h2>Total Price </h2><br/>
+                <h2>Total Price: {orderDatas.totals.total}</h2><br/>
                 <button>주문</button>
             </div>
         </div>

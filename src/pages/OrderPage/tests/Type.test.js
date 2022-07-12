@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test-utils';
 import { server } from '../../../mocks/server';
 import Type from '../Type'
 import { rest } from 'msw';
 
 test("display products images from server", async () => {
+    // Provider 감싸기
     render(<Type orderType="products" />)
     
     const productImages = await screen.findAllByRole("img", {
